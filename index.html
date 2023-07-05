@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="margem">
+        <h1> Lista de compras</h1>
+        <label>Digite os itens aqui e clique em inserir</label>
+        <input type="text" id="entradaUsuario">
+        <input type="button" value="INSERIR ITEM" onclick="inserir()" id="button1">
+        <h1>Lista de compras</h1>
+        <ul id="lista">
+           <li></li></ul>
+        <input type="button" value="REMOVER ULTIMO" onclick="apagar1()" id="button2">
+        <br>
+        <input type="button" value="REMOVER PRIMEIRO" onclick="apagar2()" id="button3">
+    </div>
+    <script>
+        function inserir(){
+        let itemUsuario = document.getElementById('entradaUsuario').value;
+        let textNode = document.createTextNode(itemUsuario);
+    
+        let elementoFilhoLi = document.createElement('li');
+        elementoFilhoLi.appendChild(textNode);
+    
+        let elementoPaiUl = document.getElementById('lista');
+    
+        elementoPaiUl.appendChild(elementoFilhoLi);
+         }
+        
+        function apagar1(){
+          let elementoPaiUl= document.getElementById('lista');
+          let itemaRemover= elementoPaiUl.lastElementChild;
+          elementoPaiUl.removeChild('itemaRemover');
+        }
+        
+        function apagar2(){
+          let elementoPaiUl= document.getElementById('lista');
+          let itemaRemover= elementoPaiUl.firtsElementChild;
+          elementoPaiUl.removeChild('itemaRemover');
+        }
+    
+    
+    </script>
+</body>
+</html>
